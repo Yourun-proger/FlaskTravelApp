@@ -1,5 +1,8 @@
 {% extends 'base.html'%}
 {% block shapka %}
+<html>
+  <title>Туры {{ departures[departure] }}</title>
+</html>
   <main class="container mt-3">
     <h1 class="display-5 mt-4">Летим {{ departures[departure] }}</h1>
     <p class="mb-4">Найдено {{ count }} туров, от {{ min_money }} до {{ max_money }} и от {{ min_nights }} ночей до {{ max_nights }} ночей</p>
