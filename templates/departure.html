@@ -7,20 +7,21 @@
     <h1 class="display-5 mt-4">Летим {{ departures[departure] }}</h1>
     <p class="mb-4">Найдено {{ count }} туров, от {{ min_money }} до {{ max_money }} и от {{ min_nights }} ночей до {{ max_nights }} ночей</p>
     <!-- CARDS -->
-    {% for key, tour in smr.items() %}
     <div class="row mt-5">
+    {% for key, tour in smr.items() %}
+
       <div class="col-4">
         <div class="card mb-4">
           <img src="{{ tour.picture }}" class="card-img-top img-fluid" alt="">
           <div class="card-body">
             <h2 class="h5 card-title">{{ tour.title }}</h2>
-            <p class="card-text">{{ tour.description }}</p>
+            <p class="card-text">{{ tour.description | truncate(47, killwords=True) }}</p>
             <a href="/tours/{{ key }}/" class="btn btn-sm btn-primary">Подробнее</a>
           </div>
         </div>
       </div>
-    </div>
     {% endfor %}
+      </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
